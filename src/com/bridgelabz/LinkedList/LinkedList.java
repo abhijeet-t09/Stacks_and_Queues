@@ -19,9 +19,21 @@ public class LinkedList<T> {
     }
 
     public T pop() {
-        T deletElement = head.data;
+        T deleteElement = head.data;
         head = head.next;
-        return deletElement;
+        return deleteElement;
+    }
+
+    public void add(T data){
+        Node<T> node = new Node<>(data);
+        if(head == null){
+            head = node;
+            tail = node;
+        }
+        else{
+            tail.next = node;
+            tail = node;
+        }
     }
 
     public T peek(){
