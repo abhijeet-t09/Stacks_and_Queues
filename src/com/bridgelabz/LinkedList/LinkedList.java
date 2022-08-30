@@ -18,12 +18,33 @@ public class LinkedList<T> {
         }
     }
 
+    public T pop() {
+        T deletElement = head.data;
+        head = head.next;
+        return deletElement;
+    }
+
+    public T peek(){
+        return head.data;
+    }
+
+    public int size(){
+        int count=0;
+        Node<T> temp = head;
+        while(temp != null){
+            temp = temp.next;
+            count++;
+        }
+        return count;
+    }
+
     public void print(){
         Node<T> temp = head;
 
         while (temp != null){
-            System.out.print(temp.data+ " ");
+            System.out.print(temp.data+ " -> ");
             temp = temp.next;
         }
+        System.out.println(tail.next);
     }
 }
